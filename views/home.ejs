@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>All Blogs</h1>
+    <form action="/create" method="" >
+        <button>Create A Blog</button>
+    </form>
+    <div class="blog">
+            <% blogs.forEach( blog => { %>
+
+            <div class="blog-card">
+
+                    <h2><%= blog.title %></h2>
+
+                    <p><%= blog.content %></p>
+
+                    <div class="btn-group">
+
+                            <form action="/edit/<%= blog.id %>" method="get">
+                                <button class="edit-btn">Edit</button>
+                            </form>
+
+                            <form action="/delete/<%= blog.id %>" method="get">
+                                <button class="delete-btn">Delete</button>
+                            </form>
+
+                    </div>
+
+            </div>
+
+        <%    }) %>
+    </div>
+</body>
+</html>
