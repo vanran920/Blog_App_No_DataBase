@@ -4,7 +4,7 @@ const errorHandler = require("./middleware/errorMiddleware")
 
 const app = express()
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 const blogRoutes = require("./routes/blogRoutes")
 
